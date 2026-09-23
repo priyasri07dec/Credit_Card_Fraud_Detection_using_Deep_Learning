@@ -241,11 +241,118 @@ The tuned ANN used:
 
 The tuned ANN was evaluated using the same independent test set as the baseline ANN
 
+### Model Comparison
+
+The final test-set comparison was:
+
+| Metric    | Baseline ANN | Tuned ANN |
+| --------- | -----------: | --------: |
+| Accuracy  |       99.94% |    99.92% |
+| Precision |       87.65% |    82.50% |
+| Recall    |       74.74% |    69.47% |
+| F1-Score  |       80.68% |    75.43% |
+| ROC-AUC   |       94.03% |    96.35% |
+| PR-AUC    |       66.47% |    62.93% |
 
 
+The Baseline ANN achieved higher Accuracy, Precision, Recall, F1-Score and PR-AUC on the independent test set, while the Tuned ANN achieved a higher ROC-AUC.
 
+Based on the test-set comparison, the Baseline ANN was selected as the final model for deployment.
 
+### Final Model
 
+The Baseline ANN achieved the following test-set results:
+| Metric    |  Score |
+| --------- | -----: |
+| Accuracy  | 99.94% |
+| Precision | 87.65% |
+| Recall    | 74.74% |
+| F1-Score  | 80.68% |
+| ROC-AUC   | 94.03% |
+| PR-AUC    | 66.47% |
+
+### Model Artifacts
+
+The following files are used for deployment:
+```
+fraud_detection_ann.keras
+scaler.pkl
+feature_columns.pkl
+threshold.pkl
+```
+#### fraud_detection_ann.keras
+Saved Baseline ANN model.
+
+#### scaler.pkl
+Saved StandardScaler used during preprocessing.
+
+#### feature_columns.pkl
+Stores the feature order used during model training.
+
+#### threshold.pkl
+Stores the classification threshold selected using validation data.
+
+## Streamlit Application
+
+The trained Baseline ANN was integrated into a Streamlit application.
+
+The application allows users to enter transaction features and obtain a prediction.
+
+### Application Workflow
+```
+User Input
+    ↓
+Feature Ordering
+    ↓
+Saved StandardScaler
+    ↓
+Baseline ANN
+    ↓
+Fraud Probability
+    ↓
+Saved Classification Threshold
+    ↓
+Prediction
+```
+The application displays:
+
+* Fraud probability
+* Prediction threshold
+* Transaction classification
+* Model information
+* Model performance information
+* Prediction Output
+
+The application classifies a transaction as:
+```
+Legitimate Transaction
+```
+or
+```
+Potentially Fraudulent Transaction
+```
+## Technologies Used
+### Programming Language
+* Python
+### Data Analysis
+* Pandas
+* NumPy
+### Data Visualization
+* Matplotlib
+* Seaborn
+### Machine Learning
+* Scikit-learn
+### Deep Learning
+* TensorFlow
+* Keras
+### Model Persistence
+* Joblib
+* Keras model format
+### Deployment
+* Streamlit
+### Development Environment
+* Jupyter Notebook
+* VS Code
 
 
 
