@@ -354,9 +354,36 @@ Potentially Fraudulent Transaction
 * Jupyter Notebook
 * VS Code
 
+## Key Learning Outcomes
 
+Through this project, the following concepts were implemented:
 
+* Exploratory Data Analysis
+* Imbalanced classification
+* Data preprocessing
+* Feature scaling
+* Stratified train-validation-test splitting
+* Class-weight based imbalance handling
+* Artificial Neural Networks
+* Dropout regularization
+* Batch normalization
+* Early stopping
+* Learning-rate scheduling
+* Probability threshold optimization
+* ROC-AUC evaluation
+* PR-AUC evaluation
+* Precision, Recall and F1-score
+* Confusion matrix analysis
+* Model persistence
+* Streamlit deployment
 
+## Conclusion
+
+This project demonstrates an end-to-end Deep Learning workflow for credit card fraud detection.
+
+A Baseline ANN and a Tuned ANN were developed and evaluated using the same independent test set. The Baseline ANN was selected for deployment based on its stronger performance across Accuracy, Precision, Recall, F1-Score and PR-AUC, while the Tuned ANN achieved a higher ROC-AUC.
+
+The final Baseline ANN was integrated into a Streamlit application to provide an interactive fraud prediction interface.
 
 
 
